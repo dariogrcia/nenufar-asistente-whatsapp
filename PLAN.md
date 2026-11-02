@@ -18,28 +18,38 @@ Estado: **brief inicial**. Falta cerrar las preguntas abiertas con `/nuevo-proye
 antes de fijar stack, decisiones y tareas.
 
 ## Preguntas abiertas
-- Canal: ¿WhatsApp Business Cloud API (Meta) directa o un proveedor (Twilio, 360dialog)?
-  ¿Número nuevo o el actual del centro?
-- Calendario: ¿un calendario único o uno por profesional/cabina? ¿Duración y
-  precio por servicio? ¿Horario y festivos?
-- Clientes existentes: ¿de dónde salen (Excel, software de gestión, Google Contacts)?
-  ¿Qué datos hay y hay consentimiento para promociones?
+- Calendario: ¿un calendario único o uno por profesional/cabina? (sin decidir; el
+  diseño debe admitir ambos por configuración). ¿Duración y precio por servicio?
+  ¿Horario y festivos?
+- Excel de clientes: columnas exactas y quién tiene consentimiento documentado.
 - Conversación: ¿IA (LLM) con herramientas o flujo guiado con menús? ¿Cuándo se
   deriva a una persona?
 - Recordatorios automáticos de cita (24 h antes) y gestión de no-shows: ¿entran?
-- Promociones: WhatsApp exige plantillas aprobadas por Meta y opt-in; ¿frecuencia
-  y volumen previsto?
-- Despliegue y presupuesto mensual (hosting, coste por conversación de Meta).
-- Fecha de entrega y si habrá panel web además de WhatsApp.
+- Volumen real: citas/mes, clientes en el Excel, campañas/mes (para recalcular coste).
+- Despliegue, fecha de entrega y si habrá panel web además de WhatsApp.
 
 ## Fuera de alcance
 <!-- se rellena al cerrar el plan -->
 
 ## Decisiones
 <!-- Cada decisión con ID. Las tareas las referencian. Codex no las cambia. -->
+- **D1 — Proveedor WhatsApp (propuesta, pendiente de OK de Darío):** 360dialog Regular
+  con Coexistence sobre el número actual del centro. Motivo: número existente + app
+  del personal intacta, sin margen sobre Meta, arranque rápido. Ver
+  `docs/estudio-proveedor-whatsapp.md`.
+- **D2 — Adaptador de mensajería:** el bot habla con una interfaz propia
+  (`MessagingProvider`); la implementación de 360dialog vive detrás. Motivo: poder
+  migrar a Cloud API directa (Tech Provider) sin rehacer el bot.
+- **D3 — Mensajes mínimos:** respuestas agrupadas y con botones/listas interactivas.
+  Motivo: desde oct-2026 Meta cobra cada mensaje de servicio a partir del 1.001/mes.
+- **D4 — Consentimiento:** solo reciben promociones los clientes con opt-in registrado
+  (fecha, canal, texto). Opt-in desde conversación iniciada por el cliente, confirmación
+  de cita o QR en el centro; baja inmediata con "BAJA". Nada de envío masivo inicial al
+  Excel sin validación legal.
 
 ## Tareas
 <!-- Se generan con /nuevo-proyecto. Plantilla en ~/kit-claude-codex/plantilla-proyecto/PLAN.md -->
 
 ## Registro
+- 2026-11-02 — Estudio de proveedor WhatsApp (docs/estudio-proveedor-whatsapp.md); D1–D4 propuestas.
 - 2026-11-02 — Repo creado con el kit Claude + Codex y brief inicial.
