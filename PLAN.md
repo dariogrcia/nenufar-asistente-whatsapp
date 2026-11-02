@@ -33,10 +33,11 @@ antes de fijar stack, decisiones y tareas.
 
 ## Decisiones
 <!-- Cada decisión con ID. Las tareas las referencian. Codex no las cambia. -->
-- **D1 — Proveedor WhatsApp (propuesta, pendiente de OK de Darío):** 360dialog Regular
-  con Coexistence sobre el número actual del centro. Motivo: número existente + app
-  del personal intacta, sin margen sobre Meta, arranque rápido. Ver
-  `docs/estudio-proveedor-whatsapp.md`.
+- **D1 — Proveedor WhatsApp (EN ESTUDIO, sin decidir):** dos candidatos, ambos con
+  Coexistence sobre el número actual: (a) 360dialog Regular, 49 €/mes, arranque rápido;
+  (b) Meta directa con Darío/Vertex como Tech Provider, 0 € de plataforma pero
+  verificación + App Review + Embedded Signup propio. Descartadas las APIs no oficiales
+  (riesgo de bloqueo del número). Ver `docs/estudio-proveedor-whatsapp.md`.
 - **D2 — Adaptador de mensajería:** el bot habla con una interfaz propia
   (`MessagingProvider`); la implementación de 360dialog vive detrás. Motivo: poder
   migrar a Cloud API directa (Tech Provider) sin rehacer el bot.
@@ -51,5 +52,5 @@ antes de fijar stack, decisiones y tareas.
 <!-- Se generan con /nuevo-proyecto. Plantilla en ~/kit-claude-codex/plantilla-proyecto/PLAN.md -->
 
 ## Registro
-- 2026-11-02 — Estudio de proveedor WhatsApp (docs/estudio-proveedor-whatsapp.md); D1–D4 propuestas.
+- 2026-11-02 — Estudio de proveedor WhatsApp (docs/estudio-proveedor-whatsapp.md); D1 en estudio, D2–D4 propuestas.
 - 2026-11-02 — Repo creado con el kit Claude + Codex y brief inicial.

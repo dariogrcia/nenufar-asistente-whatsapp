@@ -61,7 +61,7 @@ a 800 clientes con consentimiento.
 
 La promoción es la partida que más pesa: cada campaña a 800 personas cuesta unos 47 €.
 
-## 5. Recomendación
+## 5. Recomendación inicial (D1 sigue en estudio)
 **Opción A: 360dialog Regular con Coexistence.**
 - Es la única que cumple a la vez: número actual, coexistence documentado, sin margen sobre
   Meta, soporte, y arranque en días en lugar de semanas.
@@ -72,6 +72,22 @@ La promoción es la partida que más pesa: cada campaña a 800 personas cuesta u
   número se puede migrar después entre proveedores.
 - El código se escribe contra la Cloud API de Meta (360dialog la expone casi tal cual)
   y detrás de un adaptador, para poder cambiar de proveedor sin rehacer el bot.
+
+## 5 bis. Alternativas de bajo coste fijo (en estudio)
+- **Tech Provider propio (opción B):** requiere verificar la empresa en Meta, una app de
+  Meta con acceso avanzado a `whatsapp_business_messaging` y `whatsapp_business_management`
+  (App Review con política de privacidad y dos vídeos de demostración), implementar
+  Embedded Signup con Coexistence y los webhooks. El cliente paga a Meta con su propio
+  método de pago. Meta no publica plazos. Reutilizable para otros clientes de Vertex.
+  Fuente: https://developers.facebook.com/docs/whatsapp/solution-providers/get-started-for-tech-providers
+- **APIs no oficiales (Baileys, whatsapp-web.js, Evolution API): descartadas.** Casi gratis,
+  pero incumplen los términos de WhatsApp y suponen un riesgo real de bloqueo del número.
+- **Ahorro con cualquier proveedor:** que el personal responda desde la app (con
+  coexistence esos mensajes no los cobra Meta), mantener el bot por debajo de 1.000
+  mensajes de servicio al mes, entradas desde anuncios Click-to-WhatsApp (72 h gratis) y
+  promociones segmentadas.
+- Camino posible: arrancar con 360dialog y migrar a Tech Provider propio cuando Meta lo
+  apruebe (lo permite D2).
 
 ## 6. Consentimiento para promociones (pregunta 3)
 La idea de "el primer mensaje les pide que acepten" tiene un riesgo: **la política de
