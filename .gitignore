@@ -1,0 +1,17 @@
+node_modules/
+dist/
+build/
+coverage/
+.env
+.env.*
+!.env.example
+*.log
+.DS_Store
+# credenciales de Google / service accounts
+credentials*.json
+service-account*.json
+token*.json
+# datos de clientes nunca al repo
+data/
+*.csv
+*.xlsx
